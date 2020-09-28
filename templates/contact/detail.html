@@ -1,0 +1,37 @@
+{% extends 'contact/list.html' %}
+{% block url_link %} <a class="nav-link" href="{% url 'main' %}">Таблица<span class="sr-only">(current)</span></a>{% endblock %}
+{% block content %}
+<div class="container">
+        {% for k in show_all %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Фамилия</th>
+      <th scope="col">Отчество</th>
+        <th scope="col">Описание</th>
+        <th scope="col">Дата рождение</th>
+        <th scope="col">Номер</th>
+        <th scope="col">Gmail</th>
+        <th scope="col">Страница в соц сети</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ k.name }}</td>
+      <td>{{ k.last_name }}</td>
+      <td>{{ k.big_name}}</td>
+        <td>{{ k.text_01 }}</td>
+        <td>{{ k.birthday }}</td>
+        <td>{{ k.num_ber}}</td>
+        <td>{{ k.email }}</td>
+        <td>{{ k.cosial }}</td>
+    </tr>
+  </tbody>
+</table>
+    {% endfor %}
+{% endblock %}
+</div>
+
