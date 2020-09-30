@@ -1,0 +1,22 @@
+{% extends 'contact/base.html' %}
+ {% block Formula %}{% endblock %}
+{% block content %}
+<h4 class="center-text">Форма добавления</h4>
+    <div class="container f">
+    <form method="post">
+        {% csrf_token %}
+        <div class="f">
+            {{ form.name}}<br>
+            {{ form.last_name}}<br>
+            {{ form.big_name}}<br>
+            {{ form.birthday}}<br>
+            {{ form.text_01}}<br>
+            {{ form.cosial}}<br>
+            {{ form.email}}<br>
+            {{ form.num_ber}}<br>
+            <span>{{ error }}</span>
+    <button class="btn btn-danger h" type="submit">Добавить</button>
+            </div>
+</form>
+    </div>
+{% endblock %}

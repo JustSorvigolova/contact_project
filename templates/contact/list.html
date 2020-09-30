@@ -1,27 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Contact</title>
-</head>
-<body>
-<div class="container">
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-      {% block url_link %}  <a class="nav-link" href="{% url 'hook' %}">Вся инфа<span class="sr-only">(current)</span></a>{% endblock %}
-      </li>
-    </ul>
-  </div>
-</nav>
-</div>
+{% extends 'contact/base.html' %}
+{% block main %} <a class="navbar-brand" href="{% url 'main' %}">List</a>{% endblock %}
 {% block content %}
 <div class="container p-5">
     {% for k in all_of_list %}
@@ -36,7 +14,7 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{ k.id }}</th>
       <td>{{ k.name }}</td>
       <td>{{ k.last_name }}</td>
       <td>{{ k.num_ber }}</td>
@@ -46,5 +24,3 @@
     {% endfor %}
 </div>
 {% endblock %}
-</body>
-</html>
