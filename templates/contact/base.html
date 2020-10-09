@@ -24,8 +24,10 @@
       {% block url_link2 %}  <a class="nav-link" href="{% url 'main' %}">Home<span class="sr-only">(current)</span></a>{% endblock %}
       </li>
      <li class="nav-item active">
+     {% if user.is_authenticated %}
       {% block Formula %}  <a class="nav-link" href="{% url 'create' %}">form<span class="sr-only">(current)</span></a>{% endblock %}
-      </li>
+      {% endif %}
+     </li>
     </ul>
   </div>
 </nav>
