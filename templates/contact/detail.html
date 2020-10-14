@@ -2,7 +2,7 @@
 {% block url_link %} <a class="nav-link" href="{% url 'main' %}">Таблица<span class="sr-only">(current)</span></a>{% endblock %}
 {% block content %}
 <div class="container">
-        {% for k in show_all %}
+       
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -17,6 +17,7 @@
         <th scope="col">Страница в соц сети</th>
     </tr>
   </thead>
+         {% for k in show_all %}
   <tbody>
     <tr>
       <th scope="row">{{ k.id }}</th>
@@ -30,8 +31,9 @@
         <td>{{ k.cosial }}</td>
     </tr>
   </tbody>
+        {% endfor %}
 </table>
-    {% endfor %}
+    
 {% endblock %}
 </div>
 
