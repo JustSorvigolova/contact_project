@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import Contac
 from .forms import ContacForm
+from django.views.generic import DetailView
 
 
-def list_go(request):
-    all_of_list = Contac.objects.all()
-    return render(request, 'contact/list.html', {'all_of_list': all_of_list})
+class Post_Detail(DetailView):
+    model = Contac
+    template_name = 'contact/post.html'
+    context_object_name = 'article'
 
 
 def detail(request):
@@ -16,6 +18,7 @@ def detail(request):
 def main_full(request):
     hello_world = 'Hello World'
     return render(request, 'contact/base.html', {'hi': hello_world})
+
 
 
 def create(request):

@@ -1,8 +1,9 @@
 {% extends 'contact/base.html' %}
-{% block url_link %} <a class="nav-link" href="{% url 'main' %}">Таблица<span class="sr-only">(current)</span></a>{% endblock %}
+ {% block url_link2 %}  <a class="nav-link" href="{% url 'main' %}"><span class="sr-only">(current)</span></a>{% endblock %}
+{% block url_link %} <a class="nav-link" href="{% url 'main' %}">Главная<span class="sr-only">(current)</span></a>{% endblock %}
 {% block content %}
 <div class="container">
-       
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -17,11 +18,11 @@
         <th scope="col">Страница в соц сети</th>
     </tr>
   </thead>
-         {% for k in show_all %}
+    {% for k in show_all %}
   <tbody>
     <tr>
       <th scope="row">{{ k.id }}</th>
-      <td>{{ k.name }}</td>
+       <td>{{ k.name }}</td>
       <td>{{ k.last_name }}</td>
       <td>{{ k.big_name}}</td>
         <td>{{ k.text_01 }}</td>
@@ -29,11 +30,12 @@
         <td>{{ k.num_ber}}</td>
         <td>{{ k.email }}</td>
         <td>{{ k.cosial }}</td>
+       <td> <a href="{% url 'poster' k.id %}"><button class="btn btn-danger">Нажми</button> </a> </td>
     </tr>
   </tbody>
-        {% endfor %}
+{% endfor %}
 </table>
-    
+
 {% endblock %}
 </div>
 
